@@ -109,7 +109,8 @@ def _build_sam(
     sam.eval()
     checkpoint = Path(checkpoint)
     if checkpoint.name == "sam_vit_b_01ec64.pth" and not checkpoint.exists():
-        cmd = input("Download sam_vit_b_01ec64.pth from facebook AI? [y]/n: ")
+        # cmd = input("Download sam_vit_b_01ec64.pth from facebook AI? [y]/n: ")
+        cmd = "y"
         if len(cmd) == 0 or cmd.lower() == "y":
             checkpoint.parent.mkdir(parents=True, exist_ok=True)
             print("Downloading SAM ViT-B checkpoint...")
